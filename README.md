@@ -1,1 +1,1 @@
-# This is the readme file for devops
+# This is the README file for DevOps
