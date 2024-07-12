@@ -1,1 +1,3 @@
-# This is the README file for DevOps
+# DevOps
+
+This repo contains the lab experiments done in the DevOps Lab
