@@ -14,15 +14,22 @@
    git log --oneline
    ```
 
+   ![a-1](../photos/Ex4/a-1.png?raw=true)
+
 2. Start an interactive rebase for the last N commits (replace N with the number of commits):
 
    ```bash
    git rebase -i HEAD~N
    ```
 
+   ![a-2](../photos/Ex4/a-2.png?raw=true)
+   ![a-3](../photos/Ex4/a-3.png?raw=true)
+
 3. In the interactive rebase interface, change `pick` to `edit` or `squash` as needed to edit messages or combine commits.
    - `edit`: Modify the commit message or contents.
    - `squash`: Combine the commit with the previous one.
+
+   ![a-4](../photos/Ex4/a-4.png?raw=true)
 
 #### Rebase onto Another Branch
 
@@ -32,26 +39,36 @@
    git checkout -b new-branch <commit_hash>
    ```
 
+   ![a-5](../photos/Ex4/a-5.png?raw=true)
+
 2. Rebase the `main` branch onto this new branch:
 
    ```bash
    git rebase main
    ```
 
+   ![a-6](../photos/Ex4/a-6.png?raw=true)
+
 ### b. Stash Changes
 
 1. Make some changes in your working directory.
+   ![b-1](../photos/Ex4/b-1.png?raw=true)
+
 2. Stash those changes:
 
    ```bash
    git stash
    ```
 
+   ![b-2](../photos/Ex4/b-2.png?raw=true)
+
 3. Apply the stash:
 
    ```bash
    git stash apply
    ```
+
+   ![b-3](../photos/Ex4/b-3.png?raw=true)
 
 ### c. Revert and Reset
 
