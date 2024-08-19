@@ -1,0 +1,3 @@
+[submodule "WebTechLab"]
+	path = WebTechLab
+	url = https://github.com/mukesh-tp/WebTechLab.git

@@ -124,6 +124,8 @@
    git cherry-pick <commit_hash>
    ```
 
+   ![d-1](../photos/Ex4/d-1.png?raw=true)
+
 2. Resolve conflicts if any occur during cherry-picking:
    - Edit the conflicting files.
    - Stage the resolved files:
@@ -132,11 +134,16 @@
      git add <resolved_file>
      ```
 
+   ![d-2](../photos/Ex4/d-2.png?raw=true)
+
    - Continue the cherry-pick:
 
      ```bash
      git cherry-pick --continue
      ```
+
+   ![d-3](../photos/Ex4/d-3.png?raw=true)
+   ![d-4](../photos/Ex4/d-4.png?raw=true)
 
 ### e. Working with Submodules
 
@@ -146,17 +153,23 @@
    git submodule add <repository_url> <path>
    ```
 
+   ![e-1](../photos/Ex4/e-1.png?raw=true)
+
 2. Clone a repository with submodules:
 
    ```bash
    git clone --recurse-submodules <repository_url>
    ```
 
+   ![e-2](../photos/Ex4/e-2.png?raw=true)
+
 3. Update and synchronize submodules:
 
    ```bash
    git submodule update --remote --merge
    ```
+
+   ![e-3](../photos/Ex4/e-3.png?raw=true)
 
 ### f. Git Hooks
 
@@ -172,26 +185,18 @@
    fi
    ```
 
+   ![f-1](../photos/Ex4/f-1.png?raw=true)
+   ![f-2](../photos/Ex4/f-2.png?raw=true)
+
 2. Make the script executable:
 
    ```bash
    chmod +x .git/hooks/pre-commit
    ```
 
+   ![f-3](../photos/Ex4/f-3.png?raw=true)
+
 3. Try committing a file with a TODO comment to see the hook in action.
 
-#### Explore Other Types of Hooks
-
-1. Create simple scripts for other hooks like post-merge, pre-push, or post-checkout:
-   - For a `pre-push` hook, create a file named `pre-push` in the `.git/hooks` directory with the following script:
-
-     ```sh
-     #!/bin/sh
-     echo "This is a pre-push hook"
-     ```
-
-   - Make the script executable:
-
-     ```bash
-     chmod +x .git/hooks/pre-push
-     ```
+   ![f-4](../photos/Ex4/f-4.png?raw=true)
+   ![f-5](../photos/Ex4/f-5.png?raw=true)
