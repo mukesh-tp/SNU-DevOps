@@ -80,11 +80,16 @@
    git commit -m "New change"
    ```
 
+   ![c-1](../photos/Ex4/c-1.png?raw=true)
+
 2. Revert the commit:
 
    ```bash
    git revert <commit_hash>
    ```
+
+   ![c-2](../photos/Ex4/c-2.png?raw=true)
+   ![c-3](../photos/Ex4/c-3.png?raw=true)
 
 3. Experiment with `git reset` to understand the differences:
    - `--soft`: Resets the commit history but keeps the changes staged.
@@ -93,17 +98,23 @@
      git reset --soft <commit_hash>
      ```
 
+   ![c-4](../photos/Ex4/c-4.png?raw=true)
+
    - `--mixed`: Resets the commit history and unstages the changes.
 
      ```bash
      git reset --mixed <commit_hash>
      ```
 
+   ![c-5](../photos/Ex4/c-5.png?raw=true)
+
    - `--hard`: Resets the commit history and discards the changes.
 
      ```bash
      git reset --hard <commit_hash>
      ```
+
+   ![c-6](../photos/Ex4/c-6.png?raw=true)
 
 ### d. Cherry-Pick a Commit
 
