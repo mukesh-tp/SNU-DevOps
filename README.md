@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # DevOps Lab
 
 ## Overview
@@ -28,8 +27,3 @@ Welcome to the DevOps Lab! This lab is designed to provide hands-on experience w
    ```
 
 2. Follow the instructions in each lab exercise to complete the tasks.
-=======
-# DevOps
-
-This repo contains the lab experiments done in the DevOps Lab
->>>>>>> 17f87859f45eb13d438d2a54950ad2a0401998e7
