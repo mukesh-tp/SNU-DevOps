@@ -627,3 +627,541 @@ chmod +x .git/hooks/pre-commit
 By following this AIM Algorithm, you have successfully mastered advanced Git operations, including interactive rebase, stashing, reverting, resetting, cherry-picking, managing submodules, and implementing Git hooks. This exercise enhances your ability to manage commit histories effectively, collaborate efficiently, and enforce coding standards within your projects.
 
 <div style="page-break-after: always;"></div>
+
+<div style="page-break-after: always;"></div>
+
+<table style="width: 100%; border-collapse: collapse; padding:0;">
+  <tr>
+    <td style="width: 20%; border: 1px solid black; padding: 0;">
+      <table style="width: 100%; border-collapse: collapse; border: none;">
+        <tr>
+          <td style="padding-top: 0; border-bottom: 1px solid black; text-align: center; font-weight: bold; border-left: none; border-top: none; vertical-align: middle;">Ex. No. 5</td>
+        </tr>
+        <tr>
+          <td style="padding-bottom:0; text-align: center; border-bottom: none; border-right: none; vertical-align: middle;">23/10/2024</td>
+        </tr>
+      </table>
+    </td>
+    <td style="width: 80%; border: 1px solid black; text-align: center; font-weight: bold; vertical-align: middle;">Setting Up and Exploring Maven</td>
+  </tr>
+</table>
+
+#### **AIM**
+
+To set up and explore Maven on macOS, create and build a Maven project, and understand basic Maven commands.
+
+#### **Algorithm**
+
+1. **Installing Maven on macOS Using Homebrew**:
+   - Step 1: Install Homebrew (if not already installed).
+   - Step 2: Install Maven using Homebrew.
+   - Step 3: Verify the installation using the `mvn -v` command.
+
+2. **Creating and Building a Maven Project**:
+   - Step 1: Generate a new Maven project using the `mvn archetype:generate` command.
+   - Step 2: Navigate to the newly created project directory.
+   - Step 3: Compile the project using the `mvn compile` command.
+   - Step 4: Run the project with the `mvn exec:java` command.
+
+3. **Exploring Maven Commands**:
+   - Clean the project using `mvn clean`.
+   - Package the project using `mvn package`.
+   - Install the project in the local Maven repository using `mvn install`.
+
+#### **Input**
+
+```bash
+# Installing Maven
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew install maven
+mvn -v
+
+# Generating and Building Maven Project
+mvn archetype:generate -DgroupId=com.example -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+cd my-app
+mvn compile
+mvn exec:java -Dexec.mainClass="com.example.App"
+
+# Exploring Maven Commands
+mvn clean
+mvn package
+mvn install
+```
+
+#### **Output**
+
+1. **Installing Maven on macOS Using Homebrew**:
+   - Successfully installed Homebrew and Maven.
+   - Verified the installation using `mvn -v`.
+   ![Verify Maven](../photos/Ex5/verify_maven.png?raw=true)
+
+2. **Creating and Building a Maven Project**:
+   - Successfully generated a Maven project.
+   ![Maven Project Generation](../photos/Ex5/maven_project.png?raw=true)
+   - Compiled and ran the Maven project successfully.
+   ![Run Maven Project](../photos/Ex5/run_maven_project.png?raw=true)
+
+3. **Exploring Maven Commands**:
+   - Successfully cleaned, packaged, and installed the project.
+   ![Maven Clean](../photos/Ex5/maven_clean.png?raw=true)
+   ![Maven Package](../photos/Ex5/maven_package.png?raw=true)
+
+#### **Result**
+
+Successfully set up and explored Maven by installing it using Homebrew, generating and building a Maven project, and exploring various Maven commands like `clean`, `package`, and `install`.
+
+Here’s the reformatted version of the lab exercise based on the structure provided:
+
+---
+
+<div style="page-break-after: always;"></div>
+
+<table style="width: 100%; border-collapse: collapse; padding:0;">
+  <tr>
+    <td style="width: 20%; border: 1px solid black; padding: 0;">
+      <table style="width: 100%; border-collapse: collapse; border: none;">
+        <tr>
+          <td style="padding-top: 0; border-bottom: 1px solid black; text-align: center; font-weight: bold; border-left: none; border-top: none; vertical-align: middle;">Ex. No. 6</td>
+        </tr>
+        <tr>
+          <td style="padding-bottom:0; text-align: center; border-bottom: none; border-right: none; vertical-align: middle;">23/10/2024</td>
+        </tr>
+      </table>
+    </td>
+    <td style="width: 80%; border: 1px solid black; text-align: center; font-weight: bold; vertical-align: middle;">Setting Up a Java Application with Git and Maven</td>
+  </tr>
+</table>
+
+#### **AIM**
+
+To set up a Java application using Git and Maven on macOS, initialize a Git repository, build the project using Maven, and explore Maven inheritance and aggregation.
+
+#### **Algorithm**
+
+1. **Installing Git and Maven**:
+   - Install Homebrew on macOS.
+   - Install Git using Homebrew: `brew install git`.
+   - Install Maven using Homebrew: `brew install maven`.
+   - Verify the installations using `git --version` and `mvn --version`.
+
+2. **Creating a Java Project**:
+   - Create a new directory for the Java project.
+   - Initialize a Git repository: `git init`.
+   - Create a simple Java application with a `Hello, World!` program.
+   - Push the project to GitHub.
+
+3. **Setting up Maven**:
+   - Create a `pom.xml` file to manage dependencies.
+   - Explore Maven inheritance by creating a parent POM file.
+   - Use Maven aggregation to manage multiple projects as modules.
+
+4. **Building and Running the Project**:
+   - Compile the Java project using `mvn compile`.
+   - Run the Java application using `mvn exec:java`.
+   - Package the project using `mvn package`.
+
+#### **Input**
+
+```bash
+# Step 1: Install Git and Maven
+brew install git
+brew install maven
+
+# Step 2: Verify Installation
+git --version
+mvn --version
+
+# Step 3: Create and Push Java Project
+mkdir MyJavaApp
+cd MyJavaApp
+git init
+mkdir -p src/main/java/com/mukesh/app
+touch src/main/java/com/mukesh/app/App.java
+
+# App.java content:
+# package com.mukesh.app;
+# public class App {
+#     public static void main(String[] args) {
+#         System.out.println("Hello, World!");
+#     }
+# }
+
+# Commit and Push to GitHub
+git add .
+git commit -m "Initial commit"
+git remote add origin https://github.com/mukeshtp/MyJavaApp.git
+git push -u origin main
+
+# Step 4: Create pom.xml
+touch pom.xml
+# Add basic project configuration to pom.xml
+
+# Step 5: Build and Run Project
+mvn compile
+mvn exec:java -Dexec.mainClass="com.mukesh.app.App"
+
+# Step 6: Package the Application
+mvn package
+```
+
+#### **Output**
+
+1. **Git and Maven Installation**:
+   - Successfully installed Git and Maven and verified the installation.
+   ![1-1](../photos/Ex6/1-1.png?raw=true)
+
+2. **Java Project Creation and Git Repository Initialization**:
+   - Successfully initialized a Git repository and created a Java application.
+   ![2-1](../photos/Ex6/2-1.png?raw=true)
+   - Successfully pushed the project to GitHub.
+   ![2-2](../photos/Ex6/2-2.png?raw=true)
+
+3. **Maven Setup**:
+   - Created and configured a `pom.xml` file for the project.
+   ![3-1](../photos/Ex6/3-1.png?raw=true)
+
+4. **Building and Running the Java Application**:
+   - Successfully compiled the project.
+   ![4-1](../photos/Ex6/4-1.png?raw=true)
+   - Successfully ran the Java application.
+   ![4-2](../photos/Ex6/4-2.png?raw=true)
+   - Successfully packaged the project into a JAR file.
+   ![4-3](../photos/Ex6/4-3.png?raw=true)
+
+#### **Result**
+
+Successfully set up a Java application using Git and Maven, explored Maven's inheritance and aggregation features, and compiled, ran, and packaged the project.
+
+### **Exercise 7: Creating and Managing a Java Project Manually and with Maven**
+
+<div style="page-break-after: always;"></div>
+
+<table style="width: 100%; border-collapse: collapse; padding:0;">
+  <tr>
+    <td style="width: 20%; border: 1px solid black; padding: 0;">
+      <table style="width: 100%; border-collapse: collapse; border: none;">
+        <tr>
+          <td style="padding-top: 0; border-bottom: 1px solid black; text-align: center; font-weight: bold; border-left: none; border-top: none; vertical-align: middle;">Ex. No. 7</td>
+        </tr>
+        <tr>
+          <td style="padding-bottom:0; text-align: center; border-bottom: none; border-right: none; vertical-align: middle;">23/10/2024</td>
+        </tr>
+      </table>
+    </td>
+    <td style="width: 80%; border: 1px solid black; text-align: center; font-weight: bold; vertical-align: middle;">Creating and Managing a Java Project Manually and with Maven</td>
+  </tr>
+</table>
+
+#### **AIM**
+
+To manually create and manage a Java project and then automate it using Maven, exploring features like project packaging, dependency management, and lifecycle execution.
+
+#### **Algorithm**
+
+1. **Creating a Java Project (Without Maven)**:
+   - Open the terminal and navigate to the desired directory.
+   - Create a new directory and set up the required directory structure.
+   - Write a simple Java program within the directory structure.
+
+2. **Packaging the Project with Dependencies (Without Maven)**:
+   - Download the required external libraries and place them in the project directory.
+   - Compile the project with manual inclusion of the downloaded JAR files.
+
+3. **Compiling and Building the JAR File Manually**:
+   - Create a manifest file to define the entry point for the JAR.
+   - Use the `jar` command to build the project into a JAR file.
+   - Verify the created JAR and run it.
+
+4. **Initializing Maven and Managing the Project with `pom.xml`**:
+   - Check the Maven installation.
+   - Initialize a Maven project using the archetype command.
+   - Add dependencies like `commons-lang3` to the `pom.xml`.
+
+5. **Executing the Clean Lifecycle**:
+   - Run the Maven `clean` lifecycle to remove generated files.
+   - Verify the deletion of the target directory.
+
+6. **Exploring Maven Plugins and Goals**:
+   - Use the Maven help command to explore plugins and goals related to the `clean` lifecycle.
+
+#### **Input**
+
+```bash
+# Task 1: Creating a Java Project (Without Maven)
+mkdir -p MyJavaProject/src/main/java/com/example
+nano MyJavaProject/src/main/java/com/example/App.java
+
+# Task 2: Packaging with Dependencies
+mkdir lib
+cp path/to/commons-lang3-3.12.0.jar lib/
+javac -cp lib/commons-lang3-3.12.0.jar -d . src/main/java/com/example/App.java
+
+# Task 3: Building the JAR Manually
+echo "Main-Class: com.example.App" > manifest.txt
+jar cvfm MyJavaProject.jar manifest.txt com/example/*.class -C lib .
+
+# Task 4: Initialize Maven Project
+mvn archetype:generate -DgroupId=com.example -DartifactId=MyJavaProject
+
+# Task 5: Add Dependencies to pom.xml
+<dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-lang3</artifactId>
+    <version>3.12.0</version>
+</dependency>
+
+# Task 6: Executing Maven Clean
+mvn clean
+mvn help:describe -Dcmd=clean
+```
+
+#### **Output**
+
+1. **Java Project Creation (Without Maven)**:
+   - Successfully created the project structure and Java class.
+   ![1-1](../photos/Ex7/1-1.png?raw=true)
+   ![1-2](../photos/Ex7/1-2.png?raw=true)
+
+2. **Packaging with Dependencies**:
+   - Successfully downloaded and included dependencies, compiling the project with them.
+   ![2-1](../photos/Ex7/2-1.png?raw=true)
+
+3. **Manual JAR Creation**:
+   - Created the JAR file with the `manifest.txt` and the compiled classes.
+   ![3-1](../photos/Ex7/3-1.png?raw=true)
+   ![3-2](../photos/Ex7/3-2.png?raw=true)
+
+4. **Maven Initialization**:
+   - Initialized the Maven project and copied the files to the appropriate directory.
+   ![5-1](../photos/Ex7/5-1.png?raw=true)
+
+5. **Clean Lifecycle Execution**:
+   - Ran the `clean` lifecycle and removed the generated files.
+   ![6-1](../photos/Ex7/6-1.png?raw=true)
+
+6. **Exploration of Maven Plugins**:
+   - Explored the plugins associated with the `clean` lifecycle, understanding the available goals.
+   ![7-1](../photos/Ex7/7-1.png?raw=true)
+
+#### **Result**
+
+Successfully created and managed a Java project both manually and using Maven, gaining an understanding of project structure, dependency management, JAR packaging, and Maven's clean lifecycle.
+
+<div style="page-break-after: always;"></div>
+
+<table style="width: 100%; border-collapse: collapse; padding:0;">
+  <tr>
+    <td style="width: 20%; border: 1px solid black; padding: 0;">
+      <table style="width: 100%; border-collapse: collapse; border: none;">
+        <tr>
+          <td style="padding-top: 0; border-bottom: 1px solid black; text-align: center; font-weight: bold; border-left: none; border-top: none; vertical-align: middle;">Ex. No. 9</td>
+        </tr>
+        <tr>
+          <td style="padding-bottom:0; text-align: center; border-bottom: none; border-right: none; vertical-align: middle;">23/10/2024</td>
+        </tr>
+      </table>
+    </td>
+    <td style="width: 80%; border: 1px solid black; text-align: center; font-weight: bold; vertical-align: middle;">Applying CI/CD Principles to Web Development Using Jenkins, Git, and Local HTTP Server</td>
+  </tr>
+</table>
+
+#### **AIM**
+
+To implement CI/CD principles using Jenkins, Git, and a local HTTP server for automating the deployment of a web application.
+
+#### **Algorithm**
+
+1. **Set Up the Web Application and Local HTTP Server**:
+   - Create a basic web application (HTML file) and start a local HTTP server to serve the content.
+   - Use Python's HTTP server for local deployment and testing.
+
+2. **Set Up a Git Repository**:
+   - Create a GitHub repository, clone it locally, and push the initial version of the web application to the repository.
+
+3. **Install and Configure Jenkins**:
+   - Install Jenkins using Homebrew on macOS.
+   - Start Jenkins and configure it with necessary plugins for Git integration.
+
+4. **Create a Jenkins Freestyle Project**:
+   - Set up a Jenkins job to pull code from the GitHub repository.
+   - Define build steps to deploy the web application by restarting the Python HTTP server.
+
+5. **Set Up a Webhook in GitHub**:
+   - Use `ngrok` to expose the local Jenkins instance and configure a webhook in GitHub to trigger the Jenkins pipeline on code changes.
+
+6. **Trigger the CI/CD Pipeline**:
+   - Push changes to the GitHub repository and trigger the Jenkins build automatically via the webhook.
+
+7. **Verify Deployment**:
+   - Verify the web application update on the local HTTP server after Jenkins deploys the changes.
+
+#### **Input**
+
+```bash
+# Step 1: Set up the Web Application and HTTP Server
+mkdir ~/my-web-app
+cd ~/my-web-app
+echo "<html><body><h1>My Web App</h1></body></html>" > index.html
+python3 -m http.server 8000
+
+# Step 2: Set up Git Repository
+git init
+git remote add origin <your-git-repo-url>
+git add index.html
+git commit -m "Initial commit"
+git push -u origin main
+
+# Step 3: Install and Start Jenkins
+brew install jenkins
+brew services start jenkins
+cat /Users/mukeshtp/.jenkins/secrets/initialAdminPassword
+
+# Step 5: Set up ngrok and expose Jenkins
+brew install ngrok
+ngrok http 8080
+
+# Step 7: Push changes to trigger Jenkins
+echo "<html><body><h1>Updated Web App</h1></body></html>" > index.html
+git add index.html
+git commit -m "Updated the web app"
+git push origin main
+```
+
+#### **Output**
+
+1. **Web Application and HTTP Server Setup**:
+   - Successfully created and deployed a basic web app on the local HTTP server.
+   ![1-1](../photos/Ex9/1-1.png?raw=true)
+
+2. **Git Repository Setup**:
+   - Repository successfully created, and the web app was pushed to GitHub.
+   ![2-1](../photos/Ex9/2-1.png?raw=true)
+
+3. **Jenkins Installation and Setup**:
+   - Jenkins installed, started, and configured successfully.
+   ![3-1](../photos/Ex9/3-1.png?raw=true)
+
+4. **Jenkins Freestyle Project Creation**:
+   - Freestyle project created to automate the deployment process.
+   ![4-1](../photos/Ex9/4-1.png?raw=true)
+
+5. **Webhook Setup Using ngrok**:
+   - Successfully set up `ngrok` to expose the Jenkins instance, and webhook configured on GitHub.
+   ![6-1](../photos/Ex9/6-1.png?raw=true)
+
+6. **CI/CD Pipeline Trigger**:
+   - Jenkins pipeline automatically triggered on push, pulling the latest code and redeploying the app.
+   ![7-1](../photos/Ex9/7-1.png?raw=true)
+
+7. **Web Application Update**:
+   - Successfully deployed the updated web application using Jenkins.
+   ![8-1](../photos/Ex9/8-1.png?raw=true)
+
+#### **Result**
+
+By following the AIM and algorithm, the CI/CD pipeline was successfully implemented using Jenkins, Git, and a local HTTP server, demonstrating the process of automating web application deployment.
+
+### Ex. No. 10 | Date: 23/10/2024  
+#### Exploring Containerization and Application Deployment with Docker
+
+---
+
+#### **AIM**  
+To explore the process of containerizing and deploying a simple HTML application using Docker.
+
+---
+
+#### **Algorithm**  
+
+1. **Install Docker (Cask Version):**
+   - Open the terminal on your MacBook.
+   - Install Docker via Homebrew using `brew install --cask docker`.
+   - Open Docker from your Applications folder to start Docker Desktop.
+
+2. **Create a Simple HTML Page:**
+   - Open a terminal and create a new directory for your project.
+   - Create an `index.html` file containing a simple HTML message.
+
+3. **Create a Dockerfile:**
+   - In the same directory, create a `Dockerfile`.
+   - Add content to the `Dockerfile` to use the Apache server and copy the `index.html` to the server’s root directory.
+
+4. **Build the Docker Image:**
+   - Use the `docker build` command to create a Docker image from the `Dockerfile`.
+
+5. **Run the Docker Container:**
+   - Use the `docker run` command to launch the container, mapping port 80 of the container to port 8080 on the host machine.
+
+6. **Access the Apache Web Server:**
+   - Open a web browser and navigate to `http://localhost:8080` to see the webpage served by the Apache web server inside the Docker container.
+
+7. **Cleanup:**
+   - List and stop the running containers.
+   - Optionally, remove the container and Docker image.
+
+---
+
+#### **Input**  
+
+```bash
+# Step 1: Install Docker
+brew install --cask docker
+
+# Step 2: Create a Simple HTML Page
+mkdir ~/docker-apache-server
+cd ~/docker-apache-server
+echo "Hello, Docker!" > index.html
+
+# Step 3: Create a Dockerfile
+touch Dockerfile
+echo "FROM httpd:2.4\nCOPY index.html /usr/local/apache2/htdocs/" > Dockerfile
+
+# Step 4: Build the Docker Image
+docker build -t my-apache-server .
+
+# Step 5: Run the Docker Container
+docker run -p 8080:80 -d my-apache-server
+
+# Step 7: Cleanup
+docker ps
+docker stop <container_id>
+docker rm <container_id>
+docker rmi my-apache-server
+```
+
+---
+
+#### **Output**  
+
+1. **Install Docker (Cask Version):**
+   - Successfully installed Docker via Homebrew.
+   ![1-1](../photos/Ex10/1-1.png?raw=true)
+
+2. **Create a Simple HTML Page:**
+   - Successfully created the `index.html` file with "Hello, Docker!" message.
+   ![2-2](../photos/Ex10/2-2.png?raw=true)
+
+3. **Create a Dockerfile:**
+   - Successfully created a `Dockerfile` specifying the Apache web server.
+   ![3-2](../photos/Ex10/3-2.png?raw=true)
+
+4. **Build the Docker Image:**
+   - Docker image built successfully.
+   ![4-1](../photos/Ex10/4-1.png?raw=true)
+
+5. **Run the Docker Container:**
+   - Successfully ran the Docker container, serving the HTML file on port 8080.
+   ![5-1](../photos/Ex10/5-1.png?raw=true)
+
+6. **Access the Apache Web Server:**
+   - Accessed the server and confirmed the "Hello, Docker!" message was displayed.
+   ![6-1](../photos/Ex10/6-1.png?raw=true)
+
+7. **Cleanup:**
+   - Stopped and removed the Docker container and image successfully.
+   ![7-2](../photos/Ex10/7-2.png?raw=true)
+
+---
+
+#### **Result**  
+By following the AIM and Algorithm, containerization and deployment of a simple HTML page were successfully completed using Docker.
