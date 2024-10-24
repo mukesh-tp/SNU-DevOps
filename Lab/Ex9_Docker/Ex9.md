@@ -9,19 +9,19 @@
 Since you want the cask version of Docker (which provides the Docker Desktop app):
 
 1. Open the terminal on your MacBook.
-   ![1-1](../photos/Ex10/1-1.png?raw=true)
+   ![1-1](../photos/Ex9/1-1.png?raw=true)
 2. Run the following command to install Docker via Homebrew:
 
    ```bash
    brew install --cask docker
    ```
 
-   ![1-2](../photos/Ex10/1-2.png?raw=true)
+   ![1-2](../photos/Ex9/1-2.png?raw=true)
 
 3. Once Docker is installed, open Docker from your Applications folder to start Docker Desktop.
 
    **Note:** You might be asked to provide permissions or log in to a Docker account.
-   ![1-3](../photos/Ex10/1-3.png?raw=true)
+   ![1-3](../photos/Ex9/1-3.png?raw=true)
 
 ### Step 2: Create a Simple HTML Page
 
@@ -32,7 +32,7 @@ Since you want the cask version of Docker (which provides the Docker Desktop app
    cd ~/docker-apache-server
    ```
 
-   ![2-1](../photos/Ex10/2-1.png?raw=true)
+   ![2-1](../photos/Ex9/2-1.png?raw=true)
 
 2. Create the `index.html` file with a simple HTML message:
 
@@ -41,7 +41,7 @@ Since you want the cask version of Docker (which provides the Docker Desktop app
    ```
 
    This HTML file will be served by your Apache web server.
-   ![2-2](../photos/Ex10/2-2.png?raw=true)
+   ![2-2](../photos/Ex9/2-2.png?raw=true)
 
 ### Step 3: Create a Dockerfile
 
@@ -51,7 +51,7 @@ Since you want the cask version of Docker (which provides the Docker Desktop app
    touch Dockerfile
    ```
 
-   ![3-1](../photos/Ex10/3-1.png?raw=true)
+   ![3-1](../photos/Ex9/3-1.png?raw=true)
 
 2. Open the `Dockerfile` with your preferred text editor (e.g., `nano`, `vim`, or use a code editor like VS Code), and add the following content:
 
@@ -63,7 +63,7 @@ Since you want the cask version of Docker (which provides the Docker Desktop app
    COPY index.html /usr/local/apache2/htdocs/
    ```
 
-   ![3-2](../photos/Ex10/3-2.png?raw=true)
+   ![3-2](../photos/Ex9/3-2.png?raw=true)
 
 ### Step 4: Build the Docker Image
 
@@ -74,7 +74,7 @@ Since you want the cask version of Docker (which provides the Docker Desktop app
    ```
 
    Replace `my-apache-server` with a suitable name if you prefer.
-   ![4-1](../photos/Ex10/4-1.png?raw=true)
+   ![4-1](../photos/Ex9/4-1.png?raw=true)
 
 ### Step 5: Run the Docker Container
 
@@ -85,7 +85,7 @@ Since you want the cask version of Docker (which provides the Docker Desktop app
    ```
 
    This maps port 80 of the container to port 8080 on your host machine and runs the container in detached mode.
-   ![5-1](../photos/Ex10/5-1.png?raw=true)
+   ![5-1](../photos/Ex9/5-1.png?raw=true)
 
 ### Step 6: Access Your Apache Web Server
 
@@ -96,7 +96,7 @@ Since you want the cask version of Docker (which provides the Docker Desktop app
    ```
 
    You should see the "Hello, Docker!" message from the `index.html` file served by the Apache web server inside the Docker container.
-   ![6-1](../photos/Ex10/6-1.png?raw=true)
+   ![6-1](../photos/Ex9/6-1.png?raw=true)
 
 ### Step 7: Cleanup
 
@@ -112,7 +112,7 @@ Since you want the cask version of Docker (which provides the Docker Desktop app
    docker stop <container_id>
    ```
 
-   ![7-1](../photos/Ex10/7-1.png?raw=true)
+   ![7-1](../photos/Ex9/7-1.png?raw=true)
 
 2. Optionally, remove the container and the Docker image:
 
@@ -121,4 +121,4 @@ Since you want the cask version of Docker (which provides the Docker Desktop app
    docker rmi my-apache-server
    ```
 
-   ![7-2](../photos/Ex10/7-2.png?raw=true)
+   ![7-2](../photos/Ex9/7-2.png?raw=true)

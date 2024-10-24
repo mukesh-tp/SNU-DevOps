@@ -211,9 +211,10 @@ git pull origin main
 </table>
 
 #### AIM
+
 Algorithm for Implementing GitLab Operations using Git
 
-#### Algorithm:
+#### Algorithm
 
 1. **Creating a Repository**:
    - Log into your GitLab account.
@@ -628,8 +629,6 @@ By following this AIM Algorithm, you have successfully mastered advanced Git ope
 
 <div style="page-break-after: always;"></div>
 
-<div style="page-break-after: always;"></div>
-
 <table style="width: 100%; border-collapse: collapse; padding:0;">
   <tr>
     <td style="width: 20%; border: 1px solid black; padding: 0;">
@@ -709,10 +708,6 @@ mvn install
 #### **Result**
 
 Successfully set up and explored Maven by installing it using Homebrew, generating and building a Maven project, and exploring various Maven commands like `clean`, `package`, and `install`.
-
-Here’s the reformatted version of the lab exercise based on the structure provided:
-
----
 
 <div style="page-break-after: always;"></div>
 
@@ -831,8 +826,6 @@ mvn package
 #### **Result**
 
 Successfully set up a Java application using Git and Maven, explored Maven's inheritance and aggregation features, and compiled, ran, and packaged the project.
-
-### **Exercise 7: Creating and Managing a Java Project Manually and with Maven**
 
 <div style="page-break-after: always;"></div>
 
@@ -1031,45 +1024,57 @@ git push origin main
 
 1. **Web Application and HTTP Server Setup**:
    - Successfully created and deployed a basic web app on the local HTTP server.
-   ![1-1](../photos/Ex9/1-1.png?raw=true)
+   ![1-1](../photos/Ex8/1-1.png?raw=true)
 
 2. **Git Repository Setup**:
    - Repository successfully created, and the web app was pushed to GitHub.
-   ![2-1](../photos/Ex9/2-1.png?raw=true)
+   ![2-1](../photos/Ex8/2-1.png?raw=true)
 
 3. **Jenkins Installation and Setup**:
    - Jenkins installed, started, and configured successfully.
-   ![3-1](../photos/Ex9/3-1.png?raw=true)
+   ![3-1](../photos/Ex8/3-1.png?raw=true)
 
 4. **Jenkins Freestyle Project Creation**:
    - Freestyle project created to automate the deployment process.
-   ![4-1](../photos/Ex9/4-1.png?raw=true)
+   ![4-1](../photos/Ex8/4-1.png?raw=true)
 
 5. **Webhook Setup Using ngrok**:
    - Successfully set up `ngrok` to expose the Jenkins instance, and webhook configured on GitHub.
-   ![6-1](../photos/Ex9/6-1.png?raw=true)
+   ![6-1](../photos/Ex8/6-1.png?raw=true)
 
 6. **CI/CD Pipeline Trigger**:
    - Jenkins pipeline automatically triggered on push, pulling the latest code and redeploying the app.
-   ![7-1](../photos/Ex9/7-1.png?raw=true)
+   ![7-1](../photos/Ex8/7-1.png?raw=true)
 
 7. **Web Application Update**:
    - Successfully deployed the updated web application using Jenkins.
-   ![8-1](../photos/Ex9/8-1.png?raw=true)
+   ![8-1](../photos/Ex8/8-1.png?raw=true)
 
 #### **Result**
 
 By following the AIM and algorithm, the CI/CD pipeline was successfully implemented using Jenkins, Git, and a local HTTP server, demonstrating the process of automating web application deployment.
 
-### Ex. No. 10 | Date: 23/10/2024  
-#### Exploring Containerization and Application Deployment with Docker
+<div style="page-break-after: always;"></div>
 
----
+<table style="width: 100%; border-collapse: collapse; padding:0;">
+  <tr>
+    <td style="width: 20%; border: 1px solid black; padding: 0;">
+      <table style="width: 100%; border-collapse: collapse; border: none;">
+        <tr>
+          <td style="padding-top: 0; border-bottom: 1px solid black; text-align: center; font-weight: bold; border-left: none; border-top: none; vertical-align: middle;">Ex. No. 10</td>
+        </tr>
+        <tr>
+          <td style="padding-bottom:0; text-align: center; border-bottom: none; border-right: none; vertical-align: middle;">23/10/2024</td>
+        </tr>
+      </table>
+    </td>
+    <td style="width: 80%; border: 1px solid black; text-align: center; font-weight: bold; vertical-align: middle;">Exploring Containerization and Application Deployment with Docker</td>
+  </tr>
+</table>
 
 #### **AIM**  
-To explore the process of containerizing and deploying a simple HTML application using Docker.
 
----
+To explore the process of containerizing and deploying a simple HTML application using Docker.
 
 #### **Algorithm**  
 
@@ -1099,8 +1104,6 @@ To explore the process of containerizing and deploying a simple HTML application
    - List and stop the running containers.
    - Optionally, remove the container and Docker image.
 
----
-
 #### **Input**  
 
 ```bash
@@ -1129,39 +1132,36 @@ docker rm <container_id>
 docker rmi my-apache-server
 ```
 
----
-
 #### **Output**  
 
 1. **Install Docker (Cask Version):**
    - Successfully installed Docker via Homebrew.
-   ![1-1](../photos/Ex10/1-1.png?raw=true)
+   ![1-1](../photos/Ex9/1-1.png?raw=true)
 
 2. **Create a Simple HTML Page:**
    - Successfully created the `index.html` file with "Hello, Docker!" message.
-   ![2-2](../photos/Ex10/2-2.png?raw=true)
+   ![2-2](../photos/Ex9/2-2.png?raw=true)
 
 3. **Create a Dockerfile:**
    - Successfully created a `Dockerfile` specifying the Apache web server.
-   ![3-2](../photos/Ex10/3-2.png?raw=true)
+   ![3-2](../photos/Ex9/3-2.png?raw=true)
 
 4. **Build the Docker Image:**
    - Docker image built successfully.
-   ![4-1](../photos/Ex10/4-1.png?raw=true)
+   ![4-1](../photos/Ex9/4-1.png?raw=true)
 
 5. **Run the Docker Container:**
    - Successfully ran the Docker container, serving the HTML file on port 8080.
-   ![5-1](../photos/Ex10/5-1.png?raw=true)
+   ![5-1](../photos/Ex9/5-1.png?raw=true)
 
 6. **Access the Apache Web Server:**
    - Accessed the server and confirmed the "Hello, Docker!" message was displayed.
-   ![6-1](../photos/Ex10/6-1.png?raw=true)
+   ![6-1](../photos/Ex9/6-1.png?raw=true)
 
 7. **Cleanup:**
    - Stopped and removed the Docker container and image successfully.
-   ![7-2](../photos/Ex10/7-2.png?raw=true)
-
----
+   ![7-2](../photos/Ex9/7-2.png?raw=true)
 
 #### **Result**  
+
 By following the AIM and Algorithm, containerization and deployment of a simple HTML page were successfully completed using Docker.

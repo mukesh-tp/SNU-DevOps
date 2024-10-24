@@ -1,6 +1,6 @@
 # DevOps Lab - Mukesh T P
 
-## Exercise 9
+## Exercise 8
 
 ### Applying CI/CD Principles to Web Development Using Jenkins, Git, and Local HTTP Server
 
@@ -15,7 +15,7 @@
      echo "<html><body><h1>My Web App</h1></body></html>" > index.html
      ```
 
-   ![1-1](../photos/Ex9/1-1.png?raw=true)
+   ![1-1](../photos/Ex8/1-1.png?raw=true)
 
 2. **Start the Python HTTP Server**:
    - Run the following command to start a local HTTP server:
@@ -25,17 +25,17 @@
      ```
 
    - This serves the content of the current directory (in this case, `~/my-web-app`) on `http://localhost:8000`.
-   ![1-2](../photos/Ex9/1-2.png?raw=true)
+   ![1-2](../photos/Ex8/1-2.png?raw=true)
 
 3. **Test the Local HTTP Server**:
    - Open a browser and go to `http://localhost:8000`. You should see the content of `index.html` displayed.
-   ![1-3](../photos/Ex9/1-3.png?raw=true)
+   ![1-3](../photos/Ex8/1-3.png?raw=true)
 
 ### Step 2: Set Up a Git Repository
 
 1. **Create a Repository on GitHub**:
    - Go to GitHub and create a new repository (or use an existing one).
-   ![2-1](../photos/Ex9/2-1.png?raw=true)
+   ![2-1](../photos/Ex8/2-1.png?raw=true)
 
 2. **Clone the Repository Locally**:
 
@@ -48,7 +48,7 @@
    git push -u origin main
    ```
 
-   ![2-2](../photos/Ex9/2-2.png?raw=true)
+   ![2-2](../photos/Ex8/2-2.png?raw=true)
 
 ### Step 3: Install and Configure Jenkins
 
@@ -58,7 +58,7 @@
    brew install jenkins
    ```
 
-   ![3-1](../photos/Ex9/3-1.png?raw=true)
+   ![3-1](../photos/Ex8/3-1.png?raw=true)
 
 2. **Start Jenkins**:
 
@@ -66,7 +66,7 @@
    brew services start jenkins
    ```
 
-   ![3-2](../photos/Ex9/3-2.png?raw=true)
+   ![3-2](../photos/Ex8/3-2.png?raw=true)
 
 3. **Access Jenkins**:
    - Open `http://localhost:8080` in your browser.
@@ -77,23 +77,23 @@
      ```
 
    - Complete the Jenkins setup by installing recommended plugins and creating an admin account.
-   ![3-3](../photos/Ex9/3-3.png?raw=true)
+   ![3-3](../photos/Ex8/3-3.png?raw=true)
 
 ### Step 4: Create a Jenkins Freestyle Project
 
 1. **Create a New Jenkins Job**:
    - In Jenkins, go to the dashboard → "New Item" → Enter a name → Select "Freestyle Project" → Click "OK."
-   ![4-1](../photos/Ex9/4-1.png?raw=true)
+   ![4-1](../photos/Ex8/4-1.png?raw=true)
 
 2. **Configure Source Code Management**:
    - In the job configuration, go to the "Source Code Management" section.
    - Select "Git" and enter the URL of your GitHub repository (e.g., `https://github.com/yourusername/your-repo.git`).
    - If necessary, add credentials (such as a GitHub personal access token) for Jenkins to access your repository.
-   ![4-2](../photos/Ex9/4-2.png?raw=true)
+   ![4-2](../photos/Ex8/4-2.png?raw=true)
 
 3. **Enable Webhook Trigger**:
    - Under "Build Triggers," check the box for "GitHub hook trigger for GITScm polling."
-   ![4-3](../photos/Ex9/4-3.png?raw=true)
+   ![4-3](../photos/Ex8/4-3.png?raw=true)
 
 ### Step 5: Set Up the Build Steps (Execute Shell)
 
@@ -116,7 +116,7 @@
      nohup python3 -m http.server 8080 &
      ```
 
-   ![5-1](../photos/Ex9/5-1.png?raw=true)
+   ![5-1](../photos/Ex8/5-1.png?raw=true)
 
 ### Step 6: Set Up a Webhook in Git Repository
 
@@ -131,7 +131,7 @@ Since Jenkins is running locally, GitHub cannot directly communicate with Jenkin
      brew install ngrok
      ```
 
-   ![6-1](../photos/Ex9/6-1.png?raw=true)
+   ![6-1](../photos/Ex8/6-1.png?raw=true)
 
 2. **Start ngrok**:
    - Run ngrok on the Jenkins port (`8080`):
@@ -146,7 +146,7 @@ Since Jenkins is running locally, GitHub cannot directly communicate with Jenkin
      Forwarding        http://randomstring.ngrok.io -> http://localhost:8080
      ```
 
-   ![6-2](../photos/Ex9/6-2.png?raw=true)
+   ![6-2](../photos/Ex8/6-2.png?raw=true)
 
 3. **Copy the Public URL**:
    - Copy the `http://randomstring.ngrok.io` URL for the next step.
@@ -164,7 +164,7 @@ Since Jenkins is running locally, GitHub cannot directly communicate with Jenkin
      ```
 
    - Set the "Content type" to `application/json`.
-   ![6-3](../photos/Ex9/6-3.png?raw=true)
+   ![6-3](../photos/Ex8/6-3.png?raw=true)
 
 3. **Save the Webhook**.
 
@@ -180,7 +180,7 @@ Since Jenkins is running locally, GitHub cannot directly communicate with Jenkin
      git push origin main
      ```
 
-   ![7-1](../photos/Ex9/7-1.png?raw=true)
+   ![7-1](../photos/Ex8/7-1.png?raw=true)
 
 2. **Automatic Jenkins Trigger**:
    - The GitHub webhook will notify Jenkins through the ngrok URL, triggering the pipeline.
@@ -191,7 +191,7 @@ Since Jenkins is running locally, GitHub cannot directly communicate with Jenkin
 1. **Visit the Local HTTP Server**:
    - After Jenkins finishes the build and deployment, open your browser and visit `http://localhost:8000`.
    - You should see the updated web application.
-   ![8-1](../photos/Ex9/8-1.png?raw=true)
+   ![8-1](../photos/Ex8/8-1.png?raw=true)
 
 ### Optional
 
