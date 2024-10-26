@@ -1,5 +1,3 @@
-<div style="page-break-after: always;"></div>
-
 <table style="width: 100%; border-collapse: collapse; padding:0;">
   <tr>
     <td style="width: 20%; border: 1px solid black; padding: 0;">
@@ -1165,3 +1163,243 @@ docker rmi my-apache-server
 #### **Result**  
 
 By following the AIM and Algorithm, containerization and deployment of a simple HTML page were successfully completed using Docker.
+
+<table style="width: 100%; border-collapse: collapse; padding:0;">
+  <tr>
+    <td style="width: 20%; border: 1px solid black; padding: 0;">
+      <table style="width: 100%; border-collapse: collapse; border: none;">
+        <tr>
+          <td style="padding-top: 0; border-bottom: 1px solid black; text-align: center; font-weight: bold; border-left: none; border-top: none; vertical-align: middle;">Ex. No. 11</td>
+        </tr>
+        <tr>
+          <td style="padding-bottom:0; text-align: center; border-bottom: none; border-right: none; vertical-align: middle;">25/10/2024</td>
+        </tr>
+      </table>
+    </td>
+    <td style="width: 80%; border: 1px solid black; text-align: center; font-weight: bold; vertical-align: middle;">CI/CD Pipeline for a Node.js Application Using Jenkins and Docker</td>
+  </tr>
+</table>
+
+#### **AIM**  
+
+To create a CI/CD pipeline using Jenkins and Docker for automating the deployment of a Node.js application.
+
+#### **Algorithm**  
+
+1. **Set Up Node.js Application and Git Repository**:
+   - Create a project directory and initialize it as a Node.js project.
+   - Install Express and set up a basic server.
+
+2. **Create a Dockerfile**:
+   - Create a Dockerfile specifying the configuration to containerize the Node.js application.
+
+3. **Initialize Git Repository and Push to GitHub**:
+   - Initialize Git, add project files, and push the repository to GitHub.
+
+4. **Install and Configure Jenkins**:
+   - Install Jenkins, start it, and set up an admin user and recommended plugins.
+
+5. **Expose Jenkins with Ngrok**:
+   - Use ngrok to expose the Jenkins server to the internet to facilitate GitHub webhooks.
+
+6. **Create a Jenkins Job**:
+   - Set up a Jenkins job for CI/CD with Git source configuration and build commands for Docker.
+
+7. **Set Up GitHub Webhook**:
+   - Configure a webhook on GitHub to trigger Jenkins build on every code push.
+
+8. **Trigger the CI/CD Pipeline and Verify Deployment**:
+   - Push changes to GitHub, triggering Jenkins build, then verify the app on the specified port.
+
+#### **Input**  
+
+```bash
+# Step 1: Create Node.js app and Initialize Git Repository
+mkdir nodejs-app
+cd nodejs-app
+npm init -y
+npm install express --save
+echo "console.log('Server is running');" > server.js
+git init
+git add .
+git commit -m "Initial commit for Node.js CI/CD lab"
+git remote add origin https://github.com/yourusername/nodejs-ci-cd-app.git
+git push -u origin master
+
+# Step 2: Create Dockerfile
+touch Dockerfile
+echo "FROM node:14\nWORKDIR /usr/src/app\nCOPY package*.json ./\nRUN npm install\nCOPY . .\nEXPOSE 3000\nCMD ['node', 'server.js']" > Dockerfile
+
+# Step 4: Jenkins commands to build Docker image
+docker rm --force node-container || true
+docker build -t nodejs-app .
+docker run -d -p 3001:3000 --name=node-container nodejs-app
+```
+
+#### **Output**  
+
+1. **Node.js Application and Git Repository**:
+   - Created Node.js application, initialized Git, and pushed to GitHub.
+   ![1-1-5](../photos/Ex11/1-1-5.png?raw=true)
+
+2. **Dockerfile**:
+   - Created Dockerfile to containerize Node.js app.
+   ![1-2](../photos/Ex11/1-2.png?raw=true)
+
+3. **Jenkins Installation and Setup**:
+   - Jenkins installed, started, and admin user configured.
+   ![3-1](../photos/Ex8/3-1.png?raw=true)
+
+4. **Ngrok Setup**:
+   - Exposed Jenkins to the internet using Ngrok.
+   ![6-2](../photos/Ex8/6-2.png?raw=true)
+
+5. **Jenkins Job**:
+   - Jenkins job configured to pull from GitHub and deploy using Docker.
+   ![4-1](../photos/Ex11/4-1.png?raw=true)
+
+6. **GitHub Webhook**:
+   - Set up GitHub webhook to trigger Jenkins on push.
+   ![5](../photos/Ex11/5.png?raw=true)
+
+7. **Pipeline Trigger and Verification**:
+   - Jenkins successfully deployed the app, accessible on `http://localhost:3001`.
+   ![7](../photos/Ex11/7.png?raw=true)
+
+#### **Result**  
+
+The CI/CD pipeline was successfully implemented using Jenkins and Docker to automate deployment for a Node.js application.
+
+<table style="width: 100%; border-collapse: collapse; padding:0;">
+  <tr>
+    <td style="width: 20%; border: 1px solid black; padding: 0;">
+      <table style="width: 100%; border-collapse: collapse; border: none;">
+        <tr>
+          <td style="padding-top: 0; border-bottom: 1px solid black; text-align: center; font-weight: bold; border-left: none; border-top: none; vertical-align: middle;">Ex. No. 12</td>
+        </tr>
+        <tr>
+          <td style="padding-bottom:0; text-align: center; border-bottom: none; border-right: none; vertical-align: middle;">25/10/2024</td>
+        </tr>
+      </table>
+    </td>
+    <td style="width: 80%; border: 1px solid black; text-align: center; font-weight: bold; vertical-align: middle;">Implementing a Blue-Green Deployment Strategy for a Node.js Application</td>
+  </tr>
+</table>
+
+#### **AIM**
+
+To implement a Blue-Green Deployment strategy for a Node.js application using Jenkins, Docker, and Docker Hub to achieve zero-downtime deployment.
+
+#### **Algorithm**
+
+1. **Set Up the Node.js Application:**
+   - Create the project directory and initialize a Node.js project.
+   - Install dependencies (e.g., Express) and create a basic server.
+
+2. **Create a Dockerfile:**
+   - Set up the Dockerfile to use a Node.js base image and configure the web server.
+
+3. **Build and Push Docker Image to Docker Hub:**
+   - Build the Docker image locally and push it to Docker Hub for easy access during deployment.
+
+4. **Configure Jenkins for Blue-Green Deployment:**
+   - Set up Jenkins plugins, create a pipeline job, and set up credentials.
+   - Expose Jenkins to the internet for GitHub webhooks.
+
+5. **Define the Jenkins Pipeline Script:**
+   - Write and configure the pipeline script in Jenkins to handle blue-green deployment.
+
+6. **Verify and Test Zero-Downtime Deployment:**
+   - Make a code change and trigger the pipeline, observing the blue and green environments in action.
+
+#### **Input**
+
+1. **Set up Node.js Project**
+
+   ```bash
+   mkdir blue-green-deployment-app
+   cd blue-green-deployment-app
+   npm init -y
+   npm install express --save
+   ```
+
+2. **Create the Server File**
+
+   ```javascript
+   const express = require('express');
+   const app = express();
+   const PORT = 3000;
+   app.get('/', (req, res) => res.send('Hello from Blue-Green Deployment!'));
+   app.listen(PORT, () => console.log(`App running on http://localhost:${PORT}`));
+   ```
+
+3. **Initialize Git Repository and Push to GitHub**
+
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit for Blue-Green Deployment Lab"
+   git remote add origin https://github.com/yourusername/blue-green-deployment-app.git
+   git push -u origin master
+   ```
+
+4. **Dockerfile Content**
+
+   ```Dockerfile
+   FROM node:14
+   WORKDIR /usr/src/app
+   COPY package*.json ./
+   RUN npm install
+   COPY . .
+   EXPOSE 3000
+   CMD ["node", "server.js"]
+   ```
+
+5. **Jenkins Pipeline Script**
+
+   ```groovy
+   pipeline {
+       agent any
+       stages {
+           stage('Clone Repository') {
+               steps { ... }
+           }
+           stage('Build Docker Image') { steps { ... } }
+           stage('Push Docker Image') { steps { ... } }
+           stage('Deploy to Blue Environment') { steps { ... } }
+           stage('Test Blue Deployment') { steps { ... } }
+           stage('Switch to Green Environment') { steps { ... } }
+       }
+       post { always { ... } }
+   }
+   ```
+
+#### **Output**
+
+1. **Setup Node.js Project**:
+   - Node.js application initialized, Express installed.
+   - Server file (`server.js`) created with response: "Hello from Blue-Green Deployment!"
+
+   ![1-1](../photos/Ex12/1-1.png?raw=true)
+
+2. **Dockerfile Created**:
+   - Dockerfile created, specifying the use of a Node.js base image.
+
+   ![2-1](../photos/Ex12/2-1.png?raw=true)
+
+3. **Docker Image Built and Pushed to Docker Hub**:
+   - Docker image successfully built and pushed to Docker Hub.
+
+   ![3-3](../photos/Ex12/3-3.png?raw=true)
+
+4. **Jenkins Pipeline Configured**:
+   - Pipeline created in Jenkins, with webhooks enabled.
+
+5. **Zero-Downtime Deployment Observed**:
+   - Verified blue-green deployment with zero-downtime as the application switched between environments.
+
+   ![5-2](../photos/Ex12/5-2.png?raw=true)
+
+#### **Result**
+
+The Blue-Green Deployment strategy was successfully implemented, ensuring zero-downtime deployment for the Node.js application by using Jenkins and Docker to alternate between blue and green environments.
