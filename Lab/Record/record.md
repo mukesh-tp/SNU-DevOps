@@ -517,7 +517,7 @@ git pull origin main
           <td style="padding-top: 0; border-bottom: 1px solid black; text-align: center; font-weight: bold; border-left: none; border-top: none; vertical-align: middle;">Ex. No. 4</td>
         </tr>
         <tr>
-          <td style="padding-bottom:0; text-align: center; border-bottom: none; border-right: none; vertical-align: middle;">09/07/2024</td>
+          <td style="padding-bottom:0; text-align: center; border-bottom: none; border-right: none; vertical-align: middle;">28/08/2024</td>
         </tr>
       </table>
     </td>
@@ -635,7 +635,7 @@ By following this AIM Algorithm, you have successfully mastered advanced Git ope
           <td style="padding-top: 0; border-bottom: 1px solid black; text-align: center; font-weight: bold; border-left: none; border-top: none; vertical-align: middle;">Ex. No. 5</td>
         </tr>
         <tr>
-          <td style="padding-bottom:0; text-align: center; border-bottom: none; border-right: none; vertical-align: middle;">23/10/2024</td>
+          <td style="padding-bottom:0; text-align: center; border-bottom: none; border-right: none; vertical-align: middle;">28/08/2024</td>
         </tr>
       </table>
     </td>
@@ -717,7 +717,7 @@ Successfully set up and explored Maven by installing it using Homebrew, generati
           <td style="padding-top: 0; border-bottom: 1px solid black; text-align: center; font-weight: bold; border-left: none; border-top: none; vertical-align: middle;">Ex. No. 6</td>
         </tr>
         <tr>
-          <td style="padding-bottom:0; text-align: center; border-bottom: none; border-right: none; vertical-align: middle;">23/10/2024</td>
+          <td style="padding-bottom:0; text-align: center; border-bottom: none; border-right: none; vertical-align: middle;">18/09/2024</td>
         </tr>
       </table>
     </td>
@@ -835,7 +835,7 @@ Successfully set up a Java application using Git and Maven, explored Maven's inh
           <td style="padding-top: 0; border-bottom: 1px solid black; text-align: center; font-weight: bold; border-left: none; border-top: none; vertical-align: middle;">Ex. No. 7</td>
         </tr>
         <tr>
-          <td style="padding-bottom:0; text-align: center; border-bottom: none; border-right: none; vertical-align: middle;">23/10/2024</td>
+          <td style="padding-bottom:0; text-align: center; border-bottom: none; border-right: none; vertical-align: middle;">25/09/2024</td>
         </tr>
       </table>
     </td>
@@ -945,10 +945,10 @@ Successfully created and managed a Java project both manually and using Maven, g
     <td style="width: 20%; border: 1px solid black; padding: 0;">
       <table style="width: 100%; border-collapse: collapse; border: none;">
         <tr>
-          <td style="padding-top: 0; border-bottom: 1px solid black; text-align: center; font-weight: bold; border-left: none; border-top: none; vertical-align: middle;">Ex. No. 9</td>
+          <td style="padding-top: 0; border-bottom: 1px solid black; text-align: center; font-weight: bold; border-left: none; border-top: none; vertical-align: middle;">Ex. No. 8</td>
         </tr>
         <tr>
-          <td style="padding-bottom:0; text-align: center; border-bottom: none; border-right: none; vertical-align: middle;">23/10/2024</td>
+          <td style="padding-bottom:0; text-align: center; border-bottom: none; border-right: none; vertical-align: middle;">28/10/2024</td>
         </tr>
       </table>
     </td>
@@ -1059,10 +1059,10 @@ By following the AIM and algorithm, the CI/CD pipeline was successfully implemen
     <td style="width: 20%; border: 1px solid black; padding: 0;">
       <table style="width: 100%; border-collapse: collapse; border: none;">
         <tr>
-          <td style="padding-top: 0; border-bottom: 1px solid black; text-align: center; font-weight: bold; border-left: none; border-top: none; vertical-align: middle;">Ex. No. 10</td>
+          <td style="padding-top: 0; border-bottom: 1px solid black; text-align: center; font-weight: bold; border-left: none; border-top: none; vertical-align: middle;">Ex. No. 9</td>
         </tr>
         <tr>
-          <td style="padding-bottom:0; text-align: center; border-bottom: none; border-right: none; vertical-align: middle;">23/10/2024</td>
+          <td style="padding-bottom:0; text-align: center; border-bottom: none; border-right: none; vertical-align: middle;">28/10/2024</td>
         </tr>
       </table>
     </td>
@@ -1169,10 +1169,113 @@ By following the AIM and Algorithm, containerization and deployment of a simple 
     <td style="width: 20%; border: 1px solid black; padding: 0;">
       <table style="width: 100%; border-collapse: collapse; border: none;">
         <tr>
+          <td style="padding-top: 0; border-bottom: 1px solid black; text-align: center; font-weight: bold; border-left: none; border-top: none; vertical-align: middle;">Ex. No. 10</td>
+        </tr>
+        <tr>
+          <td style="padding-bottom:0; text-align: center; border-bottom: none; border-right: none; vertical-align: middle;">28/10/2024</td>
+        </tr>
+      </table>
+    </td>
+    <td style="width: 80%; border: 1px solid black; text-align: center; font-weight: bold; vertical-align: middle;">CI/CD Pipeline for a Web Application Using Jenkins, Git, and Docker Containers</td>
+  </tr>
+</table>
+
+#### **AIM**  
+
+To create a CI/CD pipeline for deploying a web application using Jenkins, Git, and Docker containers.
+
+#### **Algorithm**  
+
+1. **Set Up Web Application and Git Repository**:
+   - Create a simple web application with Nginx serving a static HTML page.
+   - Initialize a Git repository and push it to GitHub.
+
+2. **Create a Dockerfile**:
+   - Create a Dockerfile to containerize the web application with Nginx.
+
+3. **Install and Configure Jenkins**:
+   - Install Jenkins and set up an admin user along with recommended plugins.
+
+4. **Expose Jenkins with Ngrok**:
+   - Use ngrok to expose Jenkins to the internet for GitHub webhook integration.
+
+5. **Create a Jenkins Job**:
+   - Set up a Jenkins job with Git source configuration and Docker build commands.
+
+6. **Set Up GitHub Webhook**:
+   - Configure a GitHub webhook to trigger Jenkins on each code push.
+
+7. **Trigger the CI/CD Pipeline and Verify Deployment**:
+   - Push changes to GitHub, triggering Jenkins to build and deploy the application, then verify on the specified port.
+
+#### **Input**  
+
+```bash
+# Step 1: Create Web Application
+mkdir webapp
+cd webapp
+echo "<!DOCTYPE html><html><head><title>Simple Web App</title></head><body><h1>Welcome!</h1></body></html>" > index.html
+
+# Step 2: Create Dockerfile
+touch Dockerfile
+echo "FROM nginx:latest\nCOPY index.html /usr/share/nginx/html/index.html\nEXPOSE 80" > Dockerfile
+
+# Step 3: Initialize Git and Push to GitHub
+git init
+git add .
+git commit -m "Initial commit for web app CI/CD"
+git remote add origin https://github.com/yourusername/webapp-ci-cd.git
+git push -u origin master
+
+# Step 6: Docker commands in Jenkins job
+docker rm --force container1 || true
+docker build -t nginx-webapp .
+docker run -d -p 8081:80 --name=container1 nginx-webapp
+```
+
+#### **Output**  
+
+1. **Web Application and GitHub Repository**:
+   - Created a simple HTML page served by Nginx, initialized Git, and pushed to GitHub.
+   ![111](../photos/Ex10/111.png?raw=true)
+
+2. **Dockerfile**:
+   - Created Dockerfile for containerizing the web application.
+   ![114](../photos/Ex10/114.png?raw=true)
+
+3. **Jenkins Installation and Setup**:
+   - Jenkins installed, started, and configured with admin setup.
+   ![3-1](../photos/Ex8/3-1.png?raw=true)
+
+4. **Ngrok Setup**:
+   - Exposed Jenkins to the internet using Ngrok.
+   ![6-2](../photos/Ex8/6-2.png?raw=true)
+
+5. **Jenkins Job**:
+   - Configured Jenkins job to pull from GitHub and deploy with Docker.
+   ![4-1](../photos/Ex10/4-1.png?raw=true)
+
+6. **GitHub Webhook**:
+   - Set up GitHub webhook to trigger Jenkins on push.
+   ![5](../photos/Ex10/5.png?raw=true)
+
+7. **Pipeline Trigger and Verification**:
+   - Successfully triggered Jenkins and verified deployment at `http://localhost:8081`.
+   ![7](../photos/Ex10/7.png?raw=true)
+
+#### **Result**  
+
+Successfully created a CI/CD pipeline using Jenkins and Docker to automate deployment for a web application.
+
+<table style="width: 100%; border-collapse: collapse; padding:0;">
+  <tr>
+    <td style="width: 20%; border: 1px solid black; padding: 0;">
+      <table style="width: 100%; border-collapse: collapse; border: none;">
+        <tr>
           <td style="padding-top: 0; border-bottom: 1px solid black; text-align: center; font-weight: bold; border-left: none; border-top: none; vertical-align: middle;">Ex. No. 11</td>
         </tr>
         <tr>
-          <td style="padding-bottom:0; text-align: center; border-bottom: none; border-right: none; vertical-align: middle;">25/10/2024</td>
+          <td style="padding-bottom:0; text-align: center; border-bottom: none; border-right: none; vertical-align: middle;">28/10/2024</td>
         </tr>
       </table>
     </td>
