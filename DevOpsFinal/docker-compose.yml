@@ -1,0 +1,13 @@
+version: '3'
+services:
+  blue:
+    build: .
+    container_name: blue_app
+    ports:
+      - "8081:80"
+  green:
+    build: .
+    container_name: green_app
+    ports:
+      - "8082:80"
+
