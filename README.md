@@ -27,3 +27,16 @@ Welcome to the DevOps Lab! This lab is designed to provide hands-on experience w
    ```
 
 2. Follow the instructions in each lab exercise to complete the tasks.
+
+## Repository structure
+
+- `Lab/Ex01`–`Ex12` — weekly lab exercises and CIA submissions (git, Maven, Jenkins, Docker, blue-green deployment, etc.)
+- `DevOpsFinal` — course final project (Dockerfile, Jenkinsfile, docker-compose, health checks)
+- `ModelLabDevOps` — Maven/Jenkins model lab
+- `aws-cicd-pipeline-app` — Node.js app with AWS CodeBuild / Azure Pipelines CI/CD config
+- `blue-green-deployment-app` — Node.js blue-green deployment exercise
+- `nodejs-ci-cd-app` — Node.js CI/CD pipeline exercise
+- `ci-cd-webapp` — static webapp CI/CD exercise
+- `JenkinLabExercise` — Jenkins pipeline exercise
+
+These were originally separate repositories, merged here (with full original commit history preserved via `git subtree`) since they're all part of the same SNU Chennai DevOps coursework.
