@@ -1,3 +1,6 @@
 *.pdf
 /Lab/Ex06_JavaMaven/MyJavaApp
 /Lab/Ex07_JavaMavenManual/MyJavaProject
+aws-cicd-pipeline-app/node_modules
+blue-green-deployment-app/node_modules
+nodejs-ci-cd-app/node_modules
